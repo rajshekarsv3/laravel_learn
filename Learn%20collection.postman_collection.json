@@ -1,0 +1,191 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Learn collection",
+		"_postman_id": "c6310cdd-a0c6-f314-d6d8-381fa1637c59",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "127.0.0.1/learn/public/api/blogs/2/comments/3",
+			"request": {
+				"url": "127.0.0.1/learn/public/api/blogs/2/comments/3",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"comment\":\"Raajuuu\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1/learn/public/api/blogs/2/comments/3",
+			"request": {
+				"url": "127.0.0.1/learn/public/api/blogs/2/comments/3",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"comment\":\"Raajuuu\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1/learn/public/api/blogs/2/comments/3",
+			"request": {
+				"url": "127.0.0.1/learn/public/api/blogs/2/comments/3",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"comment\":\"Rajshekar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1/learn/public/api/blogs/3/comments",
+			"request": {
+				"url": "127.0.0.1/learn/public/api/blogs/3/comments",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"comment\":\"Raaju\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1/learn/public/api/blogs/2/comments",
+			"request": {
+				"url": "127.0.0.1/learn/public/api/blogs/2/comments",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Raaj\",\n\t\"description\":\"hello raj\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1/learn/public/api/blogs/1",
+			"request": {
+				"url": "127.0.0.1/learn/public/api/blogs/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Raaj\",\n\t\"description\":\"hello raj\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1/learn/public/api/blogs/1",
+			"request": {
+				"url": "127.0.0.1/learn/public/api/blogs/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Raaj\",\n\t\"description\":\"hello raj\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1/learn/public/api/blogs/1",
+			"request": {
+				"url": "127.0.0.1/learn/public/api/blogs/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Raaj\",\n\t\"description\":\"hello raj\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1/learn/public/api/blogs",
+			"request": {
+				"url": "127.0.0.1/learn/public/api/blogs",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Rj\",\n\t\"description\":\"hello raj\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
