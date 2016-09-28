@@ -17,7 +17,7 @@ Route::get('/', function (Request $request) {
     return "hello User";
 });
 
-Route::resource('blogs', 'BlogController');
-Route::resource('blogs.comments', 'CommentController');
+Route::resource('blogs', 'Api\BlogController');
+Route::resource('blogs.comments', 'Api\CommentController');
 
 

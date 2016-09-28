@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
 class BlogController extends Controller
 {
@@ -15,8 +16,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = \DB::table('blogs')->select('id','title', 'description')->get();
-        return response()->json(['blogs' => $blogs]);
+        $request = Request::create('/api/blogs', 'GET');
+        $response = \Route::dispatch($request);
+        return view('blogs.index',json_decode($response->content(),true));
     }
 
     /**
@@ -37,17 +39,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-       
-        $validator = \Validator::make($request->all(), array(
-            'title' => 'required|min:3|max:255',
-            'description' => 'required',
-        ));
-        if($validator->fails())
-            return  response()->json(["errors" => $validator->messages()]);
-        $id = \DB::table('blogs')->insertGetId(
-            ['title' => $request->title, 'description' => $request->description]
-        );
-        return response()->json(['success' => true, 'blog_id' => $id]) ;
+        //
     }
 
     /**
@@ -58,8 +50,14 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $blogs = \DB::table('blogs')->select('id','title', 'description')->where('id', $id)->get()->first();
-        return response()->json(['blog' => $blogs]);
+        $request_blog = Request::create('/api/blogs/'.$id, 'GET');
+        $response_blog = \Route::dispatch($request_blog);
+        $request_comments = Request::create('/api/blogs/'.$id.'/comments', 'GET');
+        $response_comments = \Route::dispatch($request_comments);
+        $blogs = json_decode($response_blog->content(),true);
+        $comments = json_decode($response_comments->content(),true);
+
+        return view('blogs.show',array_merge($blogs,$comments));
     }
 
     /**
@@ -82,14 +80,7 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validator = \Validator::make($request->all(), array(
-            'title' => 'required|min:3|max:255',
-            'description' => 'required',
-        ));
-        if($validator->fails())
-            return  response()->json(["errors" => $validator->messages()]);
-        $blogs = \DB::table('blogs')->where('id', $id)->update(['title' => $request->title, "description" => $request->description]);
-        return response()->json(['success' => true, 'blog_id' => $id]) ;
+        //
     }
 
     /**
@@ -100,7 +91,6 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        $del = \DB::table('blogs')->where('id', $id)->delete();
-        return response()->json(['deleted' => $del]) ;
+        //
     }
 }
