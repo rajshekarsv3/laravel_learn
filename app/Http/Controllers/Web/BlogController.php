@@ -9,6 +9,10 @@ use App\Http\Controllers\Controller;
 
 class BlogController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('test', ['only' => ['show', 'edit']]);
+    }
     /**
      * Display a listing of the resource.
      *
