@@ -28,7 +28,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('blogs.create');
     }
 
     /**
@@ -39,7 +39,9 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request_blog = Request::create('/api/blogs','POST',array("title"=>$request->title,"description"=>$request->description));
+        $response_blog = \Route::dispatch($request_blog);
+        return response()->json((json_decode($response_blog->content(),true)));
     }
 
     /**
@@ -56,8 +58,12 @@ class BlogController extends Controller
         $response_comments = \Route::dispatch($request_comments);
         $blogs = json_decode($response_blog->content(),true);
         $comments = json_decode($response_comments->content(),true);
-
-        return view('blogs.show',array_merge($blogs,$comments));
+        $output = $blogs;
+        if(empty($comments))
+            $output['comments'] = array();
+        else
+            $output = array_merge($blogs,$comments);
+        return view('blogs.show',$output);
     }
 
     /**
@@ -68,7 +74,9 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $request_blog = Request::create('/api/blogs/'.$id, 'GET');
+        $response_blog = \Route::dispatch($request_blog);
+        return view('blogs.edit',json_decode($response_blog->content(),true));
     }
 
     /**
@@ -80,7 +88,9 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request_blog = Request::create('/api/blogs/'.$id,'PUT',array("title"=>$request->title,"description"=>$request->description));
+        $response_blog = \Route::dispatch($request_blog);
+        return response()->json((json_decode($response_blog->content(),true)));
     }
 
     /**

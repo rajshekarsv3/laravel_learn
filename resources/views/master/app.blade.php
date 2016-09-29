@@ -34,11 +34,15 @@
                 border-radius: 5px;
             }
             .btn-update{
-                background-color: #ff4500;
+                background-color: #aa4500;
             }
 
             .btn-delete{
                 background-color: #f00;
+            }
+
+            .btn-create{
+                background-color: #080;
             }
 
             .full-height {
@@ -46,9 +50,7 @@
             }
 
             .flex-center {
-                align-items: center;
                 display: flex;
-                justify-content: center;
             }
 
             .position-ref {
@@ -62,7 +64,7 @@
             }
 
             .content {
-                text-align: center;
+                text-align: center;               
             }
 
             .title {
@@ -86,6 +88,27 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .row{
+                line-height: 2;
+            }
+
+            .row > div {
+                height: 20px;
+                width: 33.33%; 
+                width: calc(100% / 3);
+                display: inline-block;
+            }
+
+            .form-row {
+                margin: 10px;
+            }
+
+            .form-row > div{
+                width: 50%
+                width: calc(100% / 2);
+                display: inline-block;
+            }
         </style>
        
     </head>
@@ -104,5 +127,6 @@
                
             </div>
         </div>
+        @yield('script')
     </body>
 </html>
